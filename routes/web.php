@@ -23,5 +23,6 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/parties/trashed', [PartyController::class, 'trashed'])->name('parties.trashed');
 Route::get('/parties/{id}/restore', [PartyController::class, 'restore'])->name('parties.restore');
+Route::delete('parties/{id}/force-delete', [PartyController::class, 'forceDelete'])->name('parties.force_delete');
 
 Route::resource('parties', PartyController::class);

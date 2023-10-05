@@ -134,4 +134,13 @@ class PartyController extends Controller
 
         return redirect()->back();
     }
+
+    public function forceDelete($id) 
+    {
+        $party = Party::onlyTrashed()->findOrFail($id);
+        File::delete(public_path($party->image));
+        $party->forceDelete();
+
+        return redirect()->back();
+    }
 }

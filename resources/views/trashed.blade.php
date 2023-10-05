@@ -46,7 +46,7 @@
                                 <div class="d-flex">
                                     <a href="{{route('parties.restore', $party->id)}}" class="btn btn-success mx-1">Restore</a>
                                     
-                                    <form action="" method="POST">
+                                    <form action="{{route('parties.force_delete', $party->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">Delete</button>
