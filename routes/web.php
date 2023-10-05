@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home.first');
 
 Route::get('/parties/trashed', [PartyController::class, 'trashed'])->name('parties.trashed');
 Route::get('/parties/{id}/restore', [PartyController::class, 'restore'])->name('parties.restore');

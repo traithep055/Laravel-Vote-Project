@@ -14,4 +14,23 @@
       </div>
     </div>
   </div>
+
+  <div class="container mb-5">
+    <div class="row">
+        @foreach ($parties as $party)
+            <div class="col-md-3 mb-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="{{asset($party->image)}}" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$party->number}}</h5>
+                        <p class="card-text">{{$party->name}}</p>
+                        <a href="" class="btn btn-primary">รายละเอียด</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+
 @endsection

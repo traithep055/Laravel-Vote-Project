@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Party;
 
 class HomeController extends Controller
 {
     public function index() 
     {
-        return view('home');    
+        $parties = Party::all();
+        return view('home', compact('parties'));    
+    }
+
+    public function show(string $id)
+    {
+        $party = Party::findOrFail($id);
+
+        return view('show', compact('party'));
     }
 }
