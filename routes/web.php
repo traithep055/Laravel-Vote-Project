@@ -22,5 +22,6 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/parties/trashed', [PartyController::class, 'trashed'])->name('parties.trashed');
+Route::get('/parties/{id}/restore', [PartyController::class, 'restore'])->name('parties.restore');
 
 Route::resource('parties', PartyController::class);

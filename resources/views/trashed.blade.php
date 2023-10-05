@@ -44,11 +44,9 @@
                             <td>{{date('d-m-Y', strtotime($party->created_at))}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{route('parties.show', $party->id)}}" class="btn btn-success mx-1">Show</a>
-                                    <a href="{{route('parties.edit', $party->id)}}" class="btn btn-primary mx-1">Edit</a>
-                                    {{-- <a href="" class="btn btn-danger">Delete</a> --}}
-
-                                    <form action="{{route('parties.destroy', $party->id)}}" method="POST">
+                                    <a href="{{route('parties.restore', $party->id)}}" class="btn btn-success mx-1">Restore</a>
+                                    
+                                    <form action="" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">Delete</button>

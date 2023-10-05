@@ -126,4 +126,12 @@ class PartyController extends Controller
         $parties = Party::onlyTrashed()->get();
         return view('trashed', compact('parties'));
     }
+
+    public function restore($id) 
+    {
+        $party = Party::onlyTrashed()->findOrFail($id);
+        $party->restore();
+
+        return redirect()->back();
+    }
 }
