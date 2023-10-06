@@ -23,6 +23,8 @@ class PartyController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Party::class);
+
         return view('create');
     }
 
@@ -31,6 +33,8 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Party::class);
+
         $request->validate([
             'image' => ['required', 'max:2028', 'image'],
             'number' => ['required', 'numeric'],
@@ -71,6 +75,9 @@ class PartyController extends Controller
     public function edit(string $id)
     {
         $party = Party::findOrFail($id);
+
+        $this->authorize('update', $party);
+
         return view('edit', compact('party'));
     }
 
@@ -79,6 +86,10 @@ class PartyController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $party = Party::findOrFail($id);
+
+        $this->authorize('update', $party);
+
         $request->validate([           
             'number' => ['required', 'numeric'],
             'name' => ['required'],
@@ -86,7 +97,6 @@ class PartyController extends Controller
             'slogan' => ['required'],
         ]);
 
-        $party = Party::findOrFail($id);
 
         if ($request->hasFile('image')) {
             $request->validate([
@@ -116,6 +126,10 @@ class PartyController extends Controller
     public function destroy(string $id)
     {
         $party = Party::findOrFail($id);
+
+        $this->authorize('delete', $party);
+
+        
         $party->delete();
 
         return redirect()->route('parties.index');
@@ -123,12 +137,16 @@ class PartyController extends Controller
 
     public function trashed()
     {
+        $this->authorize('delete_party');
+
         $parties = Party::onlyTrashed()->get();
         return view('trashed', compact('parties'));
     }
 
     public function restore($id) 
     {
+        $this->authorize('delete_party');
+
         $party = Party::onlyTrashed()->findOrFail($id);
         $party->restore();
 
@@ -137,6 +155,8 @@ class PartyController extends Controller
 
     public function forceDelete($id) 
     {
+        $this->authorize('delete_party');
+
         $party = Party::onlyTrashed()->findOrFail($id);
         File::delete(public_path($party->image));
         $party->forceDelete();

@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Party::class => PartyPolicy::class,
     ];
 
     /**
@@ -21,6 +22,21 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+
+        // Gate::define('admin_party', function () {
+        //     return Auth::user()->is_admin;
+        // });
+
+        // Gate::define('create_party', function () {
+        //     return Auth::user()->is_admin;
+        // });
+        
+        // Gate::define('edit_party', function () {
+        //     return Auth::user()->is_admin;
+        // });
+        
+        // Gate::define('delete_party', function () {
+        //     return Auth::user()->is_admin;
+        // });
     }
 }
