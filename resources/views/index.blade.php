@@ -9,8 +9,8 @@
                         <h4>All Parties</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a href="{{route('parties.create')}}" class="btn btn-success mx-1">Create</a>
-                        <a href="{{route('parties.trashed')}}" class="btn btn-warning">Trashed</a>
+                        <a href="{{url('/parties-create')}}" class="btn btn-success mx-1">Create</a>
+                        <a href="{{route('parties.trashed')}}" class="btn btn-warning"><i class="fa fa-trash"></i></a>
                     </div>
                 </div>               
             </div>

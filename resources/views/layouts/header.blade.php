@@ -15,8 +15,10 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <form action="{{route('logout')}}" method="POST">
+          @csrf
+          <button type="submit" class="btn btn-outline-primary me-2">Logout</button>
+        </form>
       </div>
     </header>
   </div>

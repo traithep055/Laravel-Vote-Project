@@ -121,7 +121,7 @@ class PartyController extends Controller
         return redirect()->route('parties.index');
     }
 
-    public function trashed() 
+    public function trashed()
     {
         $parties = Party::onlyTrashed()->get();
         return view('trashed', compact('parties'));
