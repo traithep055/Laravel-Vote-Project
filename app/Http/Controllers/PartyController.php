@@ -137,16 +137,12 @@ class PartyController extends Controller
 
     public function trashed()
     {
-        $this->authorize('delete_party');
-
         $parties = Party::onlyTrashed()->get();
         return view('trashed', compact('parties'));
     }
 
     public function restore($id) 
     {
-        $this->authorize('delete_party');
-
         $party = Party::onlyTrashed()->findOrFail($id);
         $party->restore();
 
@@ -155,8 +151,6 @@ class PartyController extends Controller
 
     public function forceDelete($id) 
     {
-        $this->authorize('delete_party');
-
         $party = Party::onlyTrashed()->findOrFail($id);
         File::delete(public_path($party->image));
         $party->forceDelete();

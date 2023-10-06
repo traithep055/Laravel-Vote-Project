@@ -9,7 +9,7 @@
                         <h4>Show Party</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                      @can('admin_party')
+                      @can('viewAny', App\Models\Party::class)
                       <a href="{{route('parties.index')}}" class="btn btn-success mx-1">Back</a>
                       @endcan
                         <a href="{{ route('home.first') }}" class="btn btn-warning"><i class="fa fa-home"></i></a>
