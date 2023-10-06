@@ -13,7 +13,7 @@ class HomeController extends Controller
         return view('home', compact('parties'));    
     }
 
-    public function show(string $id)
+    public function showData(string $id)
     {
         $party = Party::findOrFail($id);
 

@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$party->number}}</h5>
                         <p class="card-text">{{$party->name}}</p>
-                        <a href="" class="btn btn-primary">รายละเอียด</a>
+                        <a href="{{route('parties.show', $party->id)}}" class="btn btn-primary">รายละเอียด</a>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
                         <a href="{{route('parties.index')}}" class="btn btn-success mx-1">Back</a>
+                        <a href="{{ route('home.first') }}" class="btn btn-warning"><i class="fa fa-home"></i></a>
                     </div>
                 </div>               
             </div>
