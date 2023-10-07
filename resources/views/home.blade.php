@@ -10,7 +10,7 @@
         และการมีความร่วมมือกันระหว่างนักเรียนและโรงเรียนในการพัฒนาศึกษาในพื้นที่นั้น
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
+        <a href="{{route('parties.vote')}}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
       </div>
     </div>
   </div>

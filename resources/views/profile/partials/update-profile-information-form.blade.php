@@ -47,6 +47,18 @@
             @endif
         </div>
 
+        <div>
+            <x-input-label for="firstname" :value="__('Firstname')" />
+            <x-text-input id="firstname" name="firstname" type="text" class="mt-1 block w-full" :value="old('firstname', $user->firstname)" required autofocus autocomplete="firstname" />
+            <x-input-error class="mt-2" :messages="$errors->get('firstname')" />
+        </div>
+
+        <div>
+            <x-input-label for="lastname" :value="__('Lastname')" />
+            <x-text-input id="lastname" name="lastname" type="text" class="mt-1 block w-full" :value="old('lastname', $user->lastname)" required autofocus autocomplete="lastname" />
+            <x-input-error class="mt-2" :messages="$errors->get('lastname')" />
+        </div>
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 

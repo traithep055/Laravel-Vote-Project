@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +38,10 @@ require __DIR__.'/auth.php';
 Route::group(['middleware' => 'auth'], function () {
     //Home
     Route::get('/home', [HomeController::class, 'index'])->name('home.first');
-    Route::get('/parties/{id}', [HomeController::class, 'showData']); 
+    Route::get('/parties/{id}', [HomeController::class, 'showData']);
+    
+    //VotePage
+    Route::get('/parties-vote', [VoteController::class, 'voteCard'])->name('parties.vote');
 
     Route::get('/parties', [PartyController::class, 'index'])->name('parties.index');
     Route::get('/parties-create', [PartyController::class, 'create']);
