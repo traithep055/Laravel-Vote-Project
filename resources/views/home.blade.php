@@ -13,7 +13,12 @@
         และการมีความร่วมมือกันระหว่างนักเรียนและโรงเรียนในการพัฒนาศึกษาในพื้นที่นั้น
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="{{route('parties.vote')}}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
+        @if (auth()->check() && auth()->user()->party_id !== null)
+          <span class="btn btn-secondary btn-lg px-4 gap-3 disabled">คุณได้ลงคะแนนแล้ว</span>
+        @else
+          <a href="{{ route('parties.vote') }}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
+        @endif
+        {{-- <a href="{{route('parties.vote')}}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a> --}}
       </div>
     </div>
   </div>
@@ -34,6 +39,4 @@
         @endforeach
     </div>
 </div>
-
-
 @endsection

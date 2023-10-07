@@ -19,4 +19,9 @@ class HomeController extends Controller
 
         return view('show', compact('party'));
     }
+
+    public function checkuserhasParty() 
+    {
+            
+    }
 }

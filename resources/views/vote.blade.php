@@ -34,10 +34,11 @@
                             <td>{{$party->name}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <form action="{{ route('parties.voting', $party->id) }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('voting', $party->id) }}" method="POST">
                                         @csrf
                                         @method('PUT')
-                                        <button class="btn btn-success"><i class="fa-solid fa-pen"></i>ลงคะแนน</button>
+                                        <input type="hidden" name="party_id" value="{{ $party->id }}">
+                                        <button type="submit" class="btn btn-success"><i class="fa-solid fa-pen"></i> ลงคะแนน</button>
                                     </form>                                                                   
                                 </div>
                             </td>
