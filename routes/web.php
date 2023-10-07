@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     
     //VotePage
     Route::get('/parties-vote', [VoteController::class, 'voteCard'])->name('parties.vote');
+    Route::put('/parties/{id}/voting', [VoteController::class, 'votingRight'])->name('parties.voting');
 
     Route::get('/parties', [PartyController::class, 'index'])->name('parties.index');
     Route::get('/parties-create', [PartyController::class, 'create']);

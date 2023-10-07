@@ -6,7 +6,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>All Parties</h5>
+                        <h5>ขื่อ-นามสกุล {{$firstname}} {{$lastname}}</h5>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
                         <a href="{{ route('home.first') }}" class="btn btn-warning"><i class="fa fa-home"></i></a>
@@ -34,7 +34,11 @@
                             <td>{{$party->name}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{route('parties.show', $party->id)}}" class="btn btn-success mx-1"><i class="fa-solid fa-pen"></i>ลงคะแนน</a>
+                                    <form action="{{ route('parties.voting', $party->id) }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
+                                        <button class="btn btn-success"><i class="fa-solid fa-pen"></i>ลงคะแนน</button>
+                                    </form>                                                                   
                                 </div>
                             </td>
                           </tr>
