@@ -8,6 +8,7 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="{{route('home.first')}}" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="{{route('profile.edit')}}" class="nav-link px-2">โปรไฟล์</a></li>
         <li><a href="#" class="nav-link px-2">ติดตามผล</a></li>
         <li><a href="#" class="nav-link px-2">เอกสาร</a></li>
         <li><a href="#" class="nav-link px-2">ติดต่อ</a></li>

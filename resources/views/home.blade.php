@@ -18,6 +18,31 @@
           transform: translateY(-5px);
           transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
       }
+      .nav li:hover:after {
+        width: 100%;
+      }
+      .nav li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #00f; /* สีฟ้า */
+      display: block;
+      margin: auto;
+      transition: width 0.5s;
+    }
+    .nav li:hover:after {
+        width: 100%;
+    }
+    .nav li::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #00f; /* สีฟ้า */
+        display: block;
+        margin: auto;
+        transition: width 0.5s;
+    }
+
     </style>
 </head>
 <body>
@@ -38,7 +63,9 @@
                   @if (auth()->check() && auth()->user()->party_id !== null)
                     <span class="btn btn-secondary btn-lg px-4 gap-3 disabled">คุณได้ลงคะแนนแล้ว</span>
                   @else
-                    <a href="{{ route('parties.vote') }}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
+                    @if (auth()->check() && auth()->user()->party_id === null && !auth()->user()->is_admin)
+                      <a href="{{ route('parties.vote') }}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a>
+                    @endif
                   @endif
                   {{-- <a href="{{route('parties.vote')}}" class="btn btn-primary btn-lg px-4 gap-3"><i class="fa-solid fa-pen"></i> ลงคะแนน</a> --}}
                 </div>
