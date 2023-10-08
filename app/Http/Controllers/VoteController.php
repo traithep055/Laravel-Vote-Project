@@ -47,6 +47,6 @@ class VoteController extends Controller
             $party->save();
         }
 
-        return redirect()->route('home.first');
+        return redirect()->route('parties.chart');
     }
 }

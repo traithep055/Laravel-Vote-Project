@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,6 +45,12 @@ Route::group(['middleware' => 'auth'], function () {
     //VotePage
     Route::get('/parties-vote', [VoteController::class, 'voteCard'])->name('parties.vote');
     Route::put('/voting/{id}', [VoteController::class, 'votingRight'])->name('voting');
+
+    //Chart
+    Route::get('/parties-chart', [ChartController::class, 'Piechart'])->name('parties.chart');
+
+    //Contact
+    Route::get('/prties-contact', [ContactController::class, 'index'])->name('parties.contact');
 
     Route::get('/parties', [PartyController::class, 'index'])->name('parties.index');
     Route::get('/parties-create', [PartyController::class, 'create']);
