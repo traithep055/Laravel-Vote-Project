@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,6 +53,10 @@ Route::group(['middleware' => 'auth'], function () {
     //Contact
     Route::get('/prties-contact', [ContactController::class, 'index'])->name('parties.contact');
 
+    //PDF Report
+    Route::get('/parties-pdf', [PDFController::class, 'index'])->name('parties-pdf');
+
+    //CRUD Parties
     Route::get('/parties', [PartyController::class, 'index'])->name('parties.index');
     Route::get('/parties-create', [PartyController::class, 'create']);
     Route::post('/parties', [PartyController::class, 'store'])->name('parties.store');
