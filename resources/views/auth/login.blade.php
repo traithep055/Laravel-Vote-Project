@@ -4,7 +4,7 @@
 
     <div class="mb-4">
         <!-- คุณสามารถเพิ่มรูปภาพของคุณที่นี่ -->
-        <img src="https://m.media-amazon.com/images/I/717d9psStjL._AC_UF894,1000_QL80_.jpg" alt="Your Image">
+        {{-- <img src="https://m.media-amazon.com/images/I/717d9psStjL._AC_UF894,1000_QL80_.jpg" alt="Your Image"> --}}
     </div>
 
     <form method="POST" action="{{ route('login') }}">
