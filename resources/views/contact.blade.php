@@ -131,7 +131,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="contact-card float-card" onmouseover="floatUp(this)" onmouseout="floatDown(this)">
-                        <img src="image/1.jpg" alt="Person 1">
+                        <img src="image/max.jpg" alt="Person 1">
                         <h2>Natthawat Kwanmueang</h2>
                         <p>Facebook: <a href="https://www.facebook.com/max.goodperson/">Natthawat Kwanmueang</a></p>
                         <p>Phone: 123-456-7890</p>
@@ -140,7 +140,7 @@
 
                 <div class="col-md-4">
                     <div class="contact-card float-card" onmouseover="floatUp(this)" onmouseout="floatDown(this)">
-                        <img src="image/2.jpg" alt="Person 2">
+                        <img src="image/ping.jpg" alt="Person 2">
                         <h2>Traithep Noysaeng</h2>
                         <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100006908764846">Traithep Noysaeng</a></p>
                         <p>Phone: 987-654-3210</p>
@@ -149,7 +149,7 @@
 
                 <div class="col-md-4">
                     <div class="contact-card float-card" onmouseover="floatUp(this)" onmouseout="floatDown(this)">
-                        <img src="image/3.png" alt="Person 3">
+                        <img src="image/beer.png" alt="Person 3">
                         <h2>Surasin Nakray</h2>
                         <p>Facebook: <a href="https://www.facebook.com/surasin.nakray">Surasin Nakray</a></p>
                         <p>Phone: 555-123-4567</p>

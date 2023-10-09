@@ -42,6 +42,10 @@
         margin: auto;
         transition: width 0.5s;
     }
+    .image-container {
+            display: flex;
+            justify-content: center;
+    }
 
     </style>
 </head>
@@ -49,10 +53,12 @@
       @include('layouts.header')
         <!-- Begin page content -->
         <div class="container">
-          <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/03/Hogwarts-Castle.jpg" class="img-fluid" alt="...">
+          <div class="image-container">
+            <img src="image/hogwartslogo.png" alt="Hogwarts" width="500px">
+          </div>
 
           <div class="px-4 py-5 my-5 text-center">
-              <img class="d-block mx-auto mb-4" src="https://e1.pngegg.com/pngimages/608/803/png-clipart-etudiant-texas-am-university-vote-election-impression-election-primaire-livre-inscription-des-electeurs.png" alt="" width="200" height="140">
+              <img class="d-block mx-auto mb-4" src="image/vote.png" alt="" width="200" height="140">
               <h1 class="display-5 fw-bold text-body-emphasis">ระบบเลือกตั้ง</h1>
               <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
