@@ -29,7 +29,7 @@
 
         <!-- Begin page content -->
         <div class="container">
-            <h1>Generate PDF</h1>
+            <h1>Election results Report</h1>
             <a class="btn btn-primary" href="{{route('parties-pdf',['download'=>'pdf'])}}">Download PDF</a>
     
             <table class="table table-bordered">

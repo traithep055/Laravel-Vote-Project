@@ -17,7 +17,7 @@
 <body class="font-sans text-gray-900 antialiased" style="background-image: url('{{ asset('image/002.png') }}'); background-attachment: fixed; background-size: cover;">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100" style="background-color: rgba(255, 255, 255, 0);">
         
-        <a href="">
+        <a href="/">
             <img src="{{ asset('image/hogwartslogo.png') }}" width="550px" alt="">
         </a>
         
