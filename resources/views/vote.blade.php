@@ -33,6 +33,12 @@
         margin: auto;
         transition: width 0.5s;
     }
+    .rainbow-text {
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow 5s linear infinite;
+    }
     </style>
 </head>
 <body>
@@ -40,6 +46,7 @@
 
         <!-- Begin page content -->
         <div class="container">
+            <h1 class="rainbow-text text-center">บัตรเลือกตั้ง</h1>
             <div class="main-content mt-5">
                 <div class="card">
                     <div class="card-header">
